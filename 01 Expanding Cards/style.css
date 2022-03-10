@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-html{
+body{
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,7 @@ html{
 }
 .container{
   display:flex;
+  width:90vw;
 }
 
 .panel{
@@ -29,9 +30,31 @@ html{
   flex: 0.5;
   margin: 10px;
   vertical-align: bottom;
+  position:relative;
   transition: flex 0.7s ease-in;
+  color:white;
 }
 
 .panel h3{
-  font-size: 24px;
+  margin:0;
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  opacity:0;
+}
+
+.panel.active{
+  flex :5;
+}
+.panel.active h3{
+  opacity:1;
+}
+
+@media(max-width: 480px){
+  .container{
+    width:100vw;
+  }
+  .panel:nth-of-type(4),.panel:nth-of-type(5){
+    display:none;
+  }
 }
