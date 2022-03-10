@@ -60,7 +60,8 @@ body{
 }
 
 .circle.active{
-  border-color:#3498db
+  transition: 0.3s ease;
+  border-color:#3498db;
 }
 
 .btn{
@@ -73,10 +74,8 @@ body{
   margin: 10px;
   font-size:14px;
   padding: 9px 30px;
-}
+  transition: 0.4s ease;
 
-.btn:active {
-  transform: scale(0.97);
 }
 
 .btn:focus {
@@ -87,4 +86,6 @@ body{
   transform: none;
   background-color: #e0e0e0;
   cursor: not-allowed;
+  transition: 0.4s ease;
+
 }

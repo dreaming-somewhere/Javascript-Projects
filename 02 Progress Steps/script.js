@@ -12,7 +12,7 @@ next.addEventListener('click', (event) => {
         currentActive = circles.length
     }
     update()
-    console.log(currentActive)
+    // console.log(currentActive)
 })
 
 prev.addEventListener('click', (event) => {
@@ -23,7 +23,7 @@ prev.addEventListener('click', (event) => {
     }
 
     update()
-    console.log(currentActive)
+    // console.log(currentActive)
 })
 
 function update() {
@@ -35,4 +35,18 @@ function update() {
             circle.classList.remove('active')
         }
     })
+    const actives = document.querySelectorAll('.active')
+    // console.log(actives.length, circles.length)
+    //we're extracting the percentage of the width of the progress
+    // console.log((actives.length / circles.length) * 100)
+    // when we divide it we get 0.25 .50 etc multiplying it by 100 we could turn it into percentage
+    progress.style.width = ((actives.length -1) / (circles.length - 1)) * 100 + '%'
+    if(currentActive === 1){
+        prev.disabled = true
+    } else if(currentActive === circles.length) {
+        next.disabled = true
+    } else {
+        prev.disabled = false
+        next.disabled = false
+    }
 }
