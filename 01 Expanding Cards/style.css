@@ -16,7 +16,7 @@ body{
 }
 .container{
   display:flex;
-  width:90vw;
+  width:70vw;
 }
 
 .panel{
@@ -31,7 +31,7 @@ body{
   margin: 10px;
   vertical-align: bottom;
   position:relative;
-  transition: flex 0.7s ease-in;
+  transition: flex 0.5s ease;
   color:white;
 }
 
@@ -48,6 +48,7 @@ body{
 }
 .panel.active h3{
   opacity:1;
+  transition: opacity 0.2s ease-in 0.2s;
 }
 
 @media(max-width: 480px){
